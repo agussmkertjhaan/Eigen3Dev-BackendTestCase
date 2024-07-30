@@ -1,10 +1,10 @@
 # Backend Test Case
 
-- [ ] Web Services
-  - [ ] Members can borrow books
-  - [ ] Member returns the book with conditions
-  - [ ] Check the book
-  - [ ] Member check
+- [x] Web Services
+  - [x] Members can borrow books
+  - [x] Member returns the book with conditions
+  - [x] Check the book
+  - [x] Member check
 
 - [x] Algorithm
   - [x] Reverse Alphabet

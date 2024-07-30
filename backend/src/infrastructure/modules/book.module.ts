@@ -1,13 +1,19 @@
 import { Module } from '@nestjs/common';
-import { BookController } from '../controllers/book.controller';
+import { BookController } from '../../presentation/controllers/book.controller';
 import { EventEmitterModule } from '@nestjs/event-emitter';
-import { BookService } from 'src/domain/services/book.service';
-import { BookRepository } from 'src/domain/repositories/book.repository';
-import { MemberRepository } from 'src/domain/repositories/member.repository';
+import { BookService } from '../../application/services/book.service';
+import { BookRepository } from '../repositories/book.repository';
+import { MemberModule } from './member.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Book } from '../../domain/entities/book.entity';
 
 @Module({
-  imports: [EventEmitterModule.forRoot()],
+  imports: [
+    TypeOrmModule.forFeature([Book]),
+    EventEmitterModule.forRoot(),
+    MemberModule,
+  ],
   controllers: [BookController],
-  providers: [BookService, BookRepository, MemberRepository],
+  providers: [BookService, BookRepository],
 })
 export class BookModule {}

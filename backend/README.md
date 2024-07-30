@@ -1,73 +1,53 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Web Services
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## How it runs
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
-
-## Description
-
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Installation
+!Note: please use .env is not for production for testing.
 
 ```bash
-$ npm install
+# npm install
+npm install
+
+# unit test
+npm run test
+
+# e2e test
+npm run test:e2e
 ```
 
-## Running the app
+## Task
 
-```bash
-# development
-$ npm run start
+Entities
 
-# watch mode
-$ npm run start:dev
+- [x] Member
+- [x] Book
 
-# production mode
-$ npm run start:prod
-```
+Use Case
 
-## Test
+- [x] Members can borrow books with conditions
+  - [x] Members may not borrow more than 2 books
+  - [x] Borrowed books are not borrowed by other members
+  - [x] Member is currently not being penalized
+- [x] Member returns the book with conditions
+  - [x] The returned book is a book that the member has borrowed
+  - [x] If the book is returned after more than 7 days, the member will be subject to a penalty.
+  - [x] Member with penalty cannot able to borrow the book for 3 days
+- [x] Check the book
+  - [x] Shows all existing books and quantities
+  - [x] Books that are being borrowed are not counted
+- [x] Member check
 
-```bash
-# unit tests
-$ npm run test
+  - [x] Shows all existing members
+  - [x] The number of books being borrowed by each member
 
-# e2e tests
-$ npm run test:e2e
+Requirements
 
-# test coverage
-$ npm run test:cov
-```
+- [x] it should be use any framework, but prefered NestJS Framework Or ExpressJS
+- [x] it should be use Swagger as API Documentation
+- [x] it should be use Database (SQL/NoSQL)
+- [x] it should be open sourced on your github repo
 
-## Support
+Extras
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+- [ ] Implement DDD Patern
+- [x] Implement Unit Testing
